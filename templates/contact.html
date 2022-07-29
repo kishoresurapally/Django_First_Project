@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block body %}
+<div class="container my-3">
+  <h1 color="r">Contact Us</h1>
+  <img
+    src="/static/four.jpg"
+    alt="My image"
+    class="d-block w-100"
+    width="25"
+    height="100"
+  />
+  <form method="post" action="/contact">
+    {% csrf_token %}
+    <div class="form-group" py-4>
+      <label for="name">Name</label>
+      <input
+        name="Name"
+        type="textarea"
+        class="form-control"
+        id="name"
+        placeholder="FIRSTNAME LASTNAME"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input
+        name="Email"
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="name@example.com"
+      />
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input
+        name="Phone"
+        type="phone"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Mobile No."
+      />
+    </div>
+
+    <button class="btn btn-primary" type="Submit">Submit</button>
+  </form>
+</div>
+
+{% endblock body %}
